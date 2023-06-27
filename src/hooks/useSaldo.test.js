@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react';
 
 test('Hooks', () => {
     const { result } = renderHook(() => {
-        const [nome, setNome] = useState('');
+        const [saldo, setSaldo] = useState(0);
         useEffect(() => {
-            setNome('Alice');
+            setSaldo(50);
         }, [])
 
-        return nome;
+        return saldo;
     })
 
-    expect(result.current).toBe('Alice');
+    expect(result.current).toBe(50);
 })
